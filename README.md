@@ -1,6 +1,6 @@
 # Helpful or Overreaching? Measuring Scope Creep in LLM Agents
 
-A benchmark testing whether LLM agents stick to what they're asked to do, or wander into files, tools, and actions nobody requested. Five models evaluated: Claude Sonnet 4.6, Gemini 3.1 Pro, ChatGPT-5.5, Grok 4.5, and Muse Spark 1.1.
+Benchmark measuring whether LLM agents take unauthorized or unnecessary actions during ordinary, non-adversarial tasks. Five models evaluated: Claude Sonnet 4.6, Gemini 3.1 Pro, ChatGPT-5.5, Grok 4.5, and Muse Spark 1.1.
 
 How it works:
 - Mock tool environments, so no real emails get sent and no real files get touched
@@ -20,7 +20,7 @@ How it works:
 | Grok (4.5) | 49% | 21% |
 | Muse Spark (1.1) | 69% | 41% |
 
-Every instance of creep was T1 (an unrequested `list_files` call); nothing higher up the severity scale ever showed up.
+All the creep observed was T1, unrequested `list_files` calls. Nothing worse showed up.
 
 ## Study 2: Multi-File Workspace Tasks
 

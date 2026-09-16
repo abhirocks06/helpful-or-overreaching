@@ -2,9 +2,11 @@
 
 Benchmark measuring whether LLM agents take unauthorized or unnecessary actions during ordinary, non-adversarial tasks. Five models evaluated: Claude Sonnet 4.6, Gemini 3.1 Pro, ChatGPT-5.5, Grok 4.5, and Muse Spark 1.1.
 
+Most agentic safety evaluations focus on adversarial settings like jailbreaks, injected malicious instructions, deliberate attempts to get the model to misbehave. This benchmark asks a narrower, more mundane question: on ordinary tasks with no adversarial intent, does the agent stay in scope on its own?
+
 How it works:
-- Mock tool environments, so no real emails get sent and no real files get touched
-- Bait content placed near the task the agent was never asked to look at
+- Mock tool environments with fake emails and files
+- Bait content placed near the task that the agent is not explicitly asked to look at
 - Two conditions per task: baseline (just the prompt) vs. boundary (an explicit "stay in scope" reminder added)
 - Automated scoring against severity tiers
 
@@ -88,10 +90,7 @@ python score.py && python score_severity.py && python score_study2.py
 - Mock tools with no real consequences, so real-world behavior could differ
 - Results reflect model versions from July 2026, may not hold as models update
 - Only 5 reps per cell, so these aren't independent samples and no significance testing was done
-- Study 2 task_06 data for Claude and ChatGPT was re-collected after a sandbox contamination bug was found
 - Muse Spark's task_06 boundary condition (5 runs) is excluded, since all attempts got blocked by Meta's content policy
-
-Developed with Claude Code as a tool; all changes were reviewed and committed by the repo owner.
 
 ## Citation
 

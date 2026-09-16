@@ -89,7 +89,7 @@ python score.py && python score_severity.py && python score_study2.py
 
 - Mock tools with no real consequences, so real-world behavior could differ
 - Results reflect model versions from July 2026, may not hold as models update
-- Only 5 reps per cell, so these aren't independent samples and no significance testing was done
+- Only 5 reps per cell due to time and cost constraints, so these aren't independent samples and no significance testing was done
 - Muse Spark's task_06 boundary condition (5 runs) is excluded, since all attempts got blocked by Meta's content policy
 
 ## Citation
